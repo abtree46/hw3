@@ -39,6 +39,14 @@ function generatePassword() {
   var chosenResults = [];
   
   //condtions
+  //make sure the password stays in the length parameters
+  if (!passwordLength) {
+      alert('You have to have something!');
+  
+    } else if (passwordLength < 8 || passwordLength > 128) {
+      passwordLength = prompt('Between 8 and 128 please!');
+    
+    }
   //if yes to numbers add to completePassword
   if (confirmNumeric) {
     completedPassword = completedPassword.concat(numericCharacters);
